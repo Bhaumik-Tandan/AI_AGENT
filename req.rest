@@ -1,0 +1,18 @@
+POST http://localhost:5000/api/v1/conversation/start
+content-type:application/json
+
+{
+    "user_id": "test_user_123",                          
+    "agent_type": "sales"                                   
+}
+
+###
+
+
+POST http://localhost:5000/api/v1/conversation/message
+content-type:application/json
+
+{
+    "session_id": "a4a7311f-6f2d-49a6-bb99-ad5a496375ff",
+    "message": "What are the main features of your product?"
+}
