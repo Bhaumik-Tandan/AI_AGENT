@@ -42,7 +42,7 @@ class PromptEngine:
                 "current_state": context.current_state,
                 "collected_information": context.collected_info,
                 "missing_information": context.get_missing_info(),
-                "conversation_history": context.conversation_history[-5:]  # Last 5 messages
+                "conversation_history": context.conversation_history[-5:]  
             },
             "knowledge": relevant_knowledge,
             "user_message": message,
