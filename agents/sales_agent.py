@@ -4,13 +4,10 @@ from core.action_registry import ActionRegistry
 from core.prompt_engine import PromptEngine
 
 def setup_sales_agent() -> Agent:
-    # Initialize knowledge base
     knowledge = KnowledgeBase()
     
-    # Initialize action registry
     actions = ActionRegistry()
     
-    # Register common sales actions
     actions.register(
         "save_lead",
         lambda name, email: print(f"Lead saved: {name} ({email})"),
@@ -23,10 +20,8 @@ def setup_sales_agent() -> Agent:
         "Schedule a product demonstration"
     )
     
-    # Initialize prompt engine
     prompt_engine = PromptEngine()
     
-    # Register system prompt for sales agent
     prompt_engine.register_system_prompt(
         "sales",
         """You are an AI sales assistant. Your goals are to:
@@ -37,7 +32,6 @@ def setup_sales_agent() -> Agent:
         Always be professional and helpful."""
     )
     
-    # Create and return the agent
     return Agent(
         knowledge=knowledge,
         action_registry=actions,

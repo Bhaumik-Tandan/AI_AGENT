@@ -8,7 +8,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# Store active conversations
 active_conversations: Dict[str, ConversationContext] = {}
 
 def setup_routes(app):
