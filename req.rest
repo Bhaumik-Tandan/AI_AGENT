@@ -16,3 +16,22 @@ content-type:application/json
     "session_id": "a4a7311f-6f2d-49a6-bb99-ad5a496375ff",
     "message": "What are the main features of your product?"
 }
+
+
+###
+POST http://localhost:5000/api/v1/conversation/knowledge
+content-type:application/json
+
+{
+    "category": "product",
+    "content": "Our SaaS platform helps businesses manage inventory efficiently. Features include real-time tracking, automated reordering, and analytics dashboard.",
+    "metadata": {
+        "price": "$199/month",
+        "features": [
+            "Real-time tracking",
+            "Automated reordering",
+            "Analytics dashboard"
+        ],
+        "trial_period": "30 days"
+    }
+}

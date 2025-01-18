@@ -23,9 +23,8 @@ def setup_routes(app):
         try:
             data = request.json
             user_id = data.get('user_id', str(uuid.uuid4()))
-            agent_type = data.get('agent_type', 'sales')  # Default to sales agent
+            agent_type = data.get('agent_type', 'sales') 
             
-            # Create new conversation context
             session_id = str(uuid.uuid4())
             context = ConversationContext(
                 user_id=user_id,
@@ -58,12 +57,9 @@ def setup_routes(app):
             if not context:
                 return jsonify({"error": "Invalid session_id"}), 404
             
-            # Get appropriate agent based on context
-            agent = setup_sales_agent()  # For now, always using sales agent
+            agent = setup_sales_agent()  
             
-            # Process message
             response = agent.process_message(message, context)
-            print("in send_message", response)
             
             return jsonify({
                 "session_id": session_id,
