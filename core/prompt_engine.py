@@ -55,7 +55,6 @@ class PromptEngine:
             }
         }
 
-        # Apply state-specific prompt if available
         if state_prompt:
             try:
                 state_specific_content = state_prompt.format(

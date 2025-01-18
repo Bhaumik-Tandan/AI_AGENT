@@ -89,8 +89,6 @@ class KnowledgeBase:
         return response.data[0].embedding
 
     def _calculate_similarity(self, embedding1: List[float], embedding2: List[float]) -> float:
-        # Implement cosine similarity calculation
-        # This is a simplified version - you might want to use numpy for better performance
         dot_product = sum(a * b for a, b in zip(embedding1, embedding2))
         magnitude1 = sum(a * a for a in embedding1) ** 0.5
         magnitude2 = sum(b * b for b in embedding2) ** 0.5
